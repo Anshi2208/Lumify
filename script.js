@@ -18,12 +18,10 @@ function goToDisplay() {
 }
 
 function goBack() {
-  // Stop animation
   cancelAnimationFrame(animationId);
 
-  // Switch back
-  document.getElementById("displayScreen").classList.add("hidden");
-  document.getElementById("entryScreen").classList.remove("hidden");
+  document.getElementById("displayScreen").style.display = "none";
+  document.getElementById("entryScreen").style.display = "flex";
 }
 
 function startScrolling() {
