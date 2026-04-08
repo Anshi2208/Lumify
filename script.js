@@ -31,23 +31,20 @@ function goBack() {
   document.getElementById("entryScreen").style.display = "flex";
 }
 
-function startScrolling() {
-  const scrollText = document.getElementById("scrollText");
+let position = window.innerHeight;
 
-  let position = window.innerWidth;
+function startScrolling() {
+  const text = document.getElementById("scrollText");
+
+  position = window.innerHeight;
 
   function animate() {
-    position -= 2; // fixed speed
+    position -= 2; // speed (adjust as needed)
 
-    if (position < -scrollText.offsetWidth) {
-      position = window.innerWidth;
-    }
-
-    scrollText.style.transform = `translateX(${position}px)`;
+    text.style.transform = `translateY(${position}px)`;
 
     animationId = requestAnimationFrame(animate);
   }
 
-  if (animationId) cancelAnimationFrame(animationId);
   animate();
 }
