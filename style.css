@@ -30,8 +30,8 @@ input, button {
 .display {
   display: flex;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
-  white-space: nowrap;
   position: relative;
 }
 
