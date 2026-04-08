@@ -1,22 +1,39 @@
 let animationId;
 
-function startDisplay() {
+function goToDisplay() {
   const text = document.getElementById("textInput").value;
+  const textColor = document.getElementById("textColor").value;
+
   const scrollText = document.getElementById("scrollText");
 
-  const textColor = document.getElementById("textColor").value;
-  const bgColor = document.getElementById("bgColor").value;
-  const speed = document.getElementById("speed").value;
-
-  document.body.style.backgroundColor = bgColor;
+  // Apply text + color
+  scrollText.innerText = text;
   scrollText.style.color = textColor;
 
-  scrollText.innerText = text;
+  // Switch screens
+  document.getElementById("entryScreen").classList.add("hidden");
+  document.getElementById("displayScreen").classList.remove("hidden");
+
+  startScrolling();
+}
+
+function goBack() {
+  // Stop animation
+  cancelAnimationFrame(animationId);
+
+  // Switch back
+  document.getElementById("displayScreen").classList.add("hidden");
+  document.getElementById("entryScreen").classList.remove("hidden");
+}
+
+function startScrolling() {
+  const scrollText = document.getElementById("scrollText");
 
   let position = window.innerWidth;
 
   function animate() {
-    position -= speed / 2;
+    position -= 2; // fixed speed
+
     if (position < -scrollText.offsetWidth) {
       position = window.innerWidth;
     }
