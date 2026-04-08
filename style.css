@@ -5,27 +5,53 @@ body {
   color: white;
 }
 
-.controls {
-  padding: 10px;
-  background: #111;
+/* Screens */
+.screen {
+  width: 100%;
+  height: 100vh;
+}
+
+/* Entry screen */
+#entryScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 input, button {
-  margin: 5px;
-  padding: 8px;
+  margin: 10px;
+  padding: 10px;
   font-size: 16px;
 }
 
+/* Display screen */
 .display {
-  height: 80vh;
   display: flex;
   align-items: center;
   overflow: hidden;
   white-space: nowrap;
+  position: relative;
 }
 
+/* Hidden class */
+.hidden {
+  display: none;
+}
+
+/* Scrolling text */
 #scrollText {
   font-size: 40px;
-  position: relative;
   white-space: nowrap;
+  position: absolute;
+  padding: 10px 20px;
+
+  /* Glow effect */
+  text-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 20px currentColor;
+
+  border: 2px solid currentColor;
+  border-radius: 8px;
 }
