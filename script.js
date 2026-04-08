@@ -6,11 +6,10 @@ function goToDisplay() {
 
   const scrollText = document.getElementById("scrollText");
 
-  // Set text + color
   scrollText.innerText = text;
   scrollText.style.color = textColor;
 
-  // 🔥 FULL SWITCH
+  // 🔥 hide entry, show display
   document.getElementById("entryScreen").style.display = "none";
   document.getElementById("displayScreen").style.display = "flex";
 
