@@ -36,11 +36,6 @@ html, body {
   overflow: hidden;
 }
 
-/* Hide inactive screen */
-.hidden {
-  display: none;
-}
-
 /* Scrolling text */
 #scrollText {
   font-size: 40px;
