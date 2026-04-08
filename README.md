@@ -2,7 +2,7 @@
 
 Lumify is a lightweight web-based app that displays customizable scrolling text in a fullscreen, teleprompter-style interface. It is designed for presentations, events, notifications, or creative displays where continuous scrolling text is needed.
 
-🌐 Live Demo: https://anshi2208.github.io/lumify/
+🌐 Live Demo: https://anshi2208.github.io/Lumify/
 
 ---
 
