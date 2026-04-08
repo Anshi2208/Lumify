@@ -6,13 +6,13 @@ function goToDisplay() {
 
   const scrollText = document.getElementById("scrollText");
 
-  // Apply text + color
+  // Set text + color
   scrollText.innerText = text;
   scrollText.style.color = textColor;
 
-  // Switch screens
-  document.getElementById("entryScreen").classList.add("hidden");
-  document.getElementById("displayScreen").classList.remove("hidden");
+  // 🔥 FULL SWITCH
+  document.getElementById("entryScreen").style.display = "none";
+  document.getElementById("displayScreen").style.display = "flex";
 
   startScrolling();
 }
