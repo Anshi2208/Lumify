@@ -1,26 +1,23 @@
-* {
-  box-sizing: border-box;
-}
-
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden; /* 🚫 NO SCROLL */
+  overflow: hidden; /* 🚫 no scrolling */
   background: black;
+  font-family: Arial, sans-serif;
 }
 
-/* Fullscreen container for each screen */
+/* Both screens fully cover viewport */
 .screen {
-  position: fixed;   /* 🔥 KEY CHANGE */
+  position: fixed;  /* 🔥 critical */
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
 }
 
-/* Entry screen layout */
+/* Entry screen centered */
 #entryScreen {
   display: flex;
   flex-direction: column;
@@ -28,19 +25,25 @@ html, body {
   align-items: center;
 }
 
-/* Display screen layout */
-.display {
-  display: flex;
+/* Display screen centered */
+#displayScreen {
+  display: none; /* hidden initially */
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+}
+
+/* Input styles */
+input, button {
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
 }
 
 /* Scrolling text */
 #scrollText {
+  position: absolute;
   font-size: 40px;
   white-space: nowrap;
-  position: absolute;
 
   color: white;
 
