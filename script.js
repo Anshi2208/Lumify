@@ -1,6 +1,15 @@
 let animationId;
 
 function goToDisplay() {
+  // 🔥 request fullscreen (must be inside user action)
+  const elem = document.documentElement;
+
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) {
+    elem.webkitRequestFullscreen();
+  }
+
   const text = document.getElementById("textInput").value;
   const textColor = document.getElementById("textColor").value;
 
@@ -9,7 +18,6 @@ function goToDisplay() {
   scrollText.innerText = text;
   scrollText.style.color = textColor;
 
-  // 🔥 hide entry, show display
   document.getElementById("entryScreen").style.display = "none";
   document.getElementById("displayScreen").style.display = "flex";
 
