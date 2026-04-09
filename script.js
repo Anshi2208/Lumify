@@ -31,17 +31,23 @@ function goBack() {
   document.getElementById("entryScreen").style.display = "flex";
 }
 
-let position = window.innerHeight;
+let position;
 
 function startScrolling() {
   const text = document.getElementById("scrollText");
 
-  position = window.innerHeight;
+  // Start from right side of screen
+  position = window.innerWidth;
 
   function animate() {
-    position -= 2; // speed (adjust as needed)
+    position -= 2; // speed
 
-    text.style.transform = `translateY(${position}px)`;
+    text.style.transform = `translateX(${position}px)`;
+
+    // 🔁 Reset when text fully leaves screen
+    if (position < -text.offsetWidth) {
+      position = window.innerWidth;
+    }
 
     animationId = requestAnimationFrame(animate);
   }
